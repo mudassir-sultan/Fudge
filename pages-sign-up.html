@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="shortcut icon" href="img/icons/icon-48x48.jpg" />
+
+	<title>RMS FUDGE SIGN IN</title>
+
+	<link  href="css/all.css" rel="stylesheet">
+	<link id="theme-style" href="css/light.css" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<script>
+		(function() {
+			const savedTheme = localStorage.getItem('theme') || 'light';
+			document.getElementById('theme-style').setAttribute('href', `css/${savedTheme}.css`);
+		})();
+	</script>
+</head>
+
+<body>
+	<main class="d-flex w-100">
+		<div class="container-fluid d-flex flex-column" id="signup">
+			<div class="row vh-100">
+				<div class="col-12 col-lg-6 col-xl-7">
+					<div class="d-flex align-items-center justify-content-center flex-column h-100">
+						<img src="img/images/login-v3.png" class="img-fluid img-signup" alt="login" width="500">
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 col-xl-4 mx-auto d-table h-100">
+					<div class="d-table-cell align-middle align-mobile-top">
+						<div class="card mb-0">
+							<div class="card-body py-2">
+								<div class="text-center" style="margin-top: -40px;">
+									<img src="img/images/logo-white.png" alt="logo" class="img-fluid">
+								</div>
+								<div class="text-center mb-4" style="margin-top: -20px;">
+									<h1 class="h2">Sign Up</h1>
+									<p class="text-gray-500 small px-5">
+										Start creating the best possible user experience for you customers.
+									</p>
+								</div>
+								<div class="m-sm-3">
+									<form>
+										<div class="row">
+											<div class="mb-3 col-md-6">
+												<input class="form-control form-control-lg" id="signUpFN" type="text" name="name" placeholder="First name">
+													<span class="error text-danger small d-none" id="signUpFNError">First name is required.</span>
+											  		<span class="success text-success small d-none" id="signUpFNSuccess">First name is Valid</span>
+											</div>
+											<div class="mb-3 col-md-6">
+												<input class="form-control form-control-lg"id="signUpLN"  type="text" name="name" placeholder="Last name">
+													<span class="error text-danger small d-none" id="signUpLNError">Last name is required.</span>
+											  		<span class="success text-success small d-none" id="signUpLNSuccess">Last name is Valid</span>
+											</div>
+										</div>
+										<div class="mb-3">
+											<input class="form-control form-control-lg" id="signUpGBP" type="text" name="name" placeholder="Google Business Profile">
+													<span class="error text-danger small d-none" id="signUpGBPError">Google Business Profile is required.</span>
+											  		<span class="success text-success small d-none" id="signUpGBPSuccess">Google Business Profile is Valid</span>
+										</div>
+										<div class="mb-3">
+											<input class="form-control form-control-lg" id="signUpEmail" type="email" name="email" placeholder="Email">
+													<span class="error text-danger small d-none" id="signUpEmailError">Email is required.</span>
+											  		<span class="success text-success small d-none" id="signUpEmailSuccess">Email is Valid</span>
+										</div>
+										<div class="mb-3">
+											<input class="form-control form-control-lg" id="signUpPassword" type="password" name="password" placeholder="Password">
+													<span class="error text-danger small d-none" id="signUpPasswordError">Password is required.</span>
+											  		<span class="success text-success small d-none" id="signUpPasswordSuccess">Password is Valid</span>
+										</div>
+										<div class="form-check align-items-center">
+											<input id="agreementCheckbox" type="checkbox" class="form-check-input" value="" name="remember-me" checked="">
+											<label class="form-check-label text-small" for="agreementCheckbox">I agree to the <a href="javascript:void(0)">terms and conditions</a></label>
+										</div>
+										<div class="d-grid gap-2 mt-3">
+											<button type="button" id="signUp" class="btn btn-lg btn-primary">Sign up</button>
+										</div>
+									</form>
+									<div class="row my-3 my-lg-4">
+										<div class="col">
+											<hr>
+										</div>
+										<div class="col-auto text-uppercase d-flex align-items-center">Or</div>
+										<div class="col">
+											<hr>
+										</div>
+									</div>
+									<div class="d-grid mb-3">
+										<button type="button" class="btn btn-google-link btn-lg" href="/"><i class="fab fa-fw fa-google"></i> Sign in with Google</button>
+									</div>
+								</div>
+								<div class="text-center mb-3">
+									Already have account? <a href="/pages-sign-in.html">Log In</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- script -->
+	<script src="js/app.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/all.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script type="text/javascript" src="js/daterangepicker.min.js"></script>
+</body>
+
+</html>

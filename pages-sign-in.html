@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="shortcut icon" href="img/icons/icon-48x48.jpg" />
+
+	<title>RMS FUDGE</title>
+
+	<link  href="css/all.css" rel="stylesheet">
+	<link id="theme-style" href="css/light.css" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<script>
+		(function() {
+			const savedTheme = localStorage.getItem('theme') || 'light';
+			document.getElementById('theme-style').setAttribute('href', `css/${savedTheme}.css`);
+		})();
+	</script>
+</head>
+
+<body data-theme="light">
+	<main class="d-flex w-100">
+		<div class="container-fluid d-flex flex-column" id="login">
+			<div class="row vh-100">
+				<div class="col-12 col-lg-6 col-xl-7">
+					<div class="d-flex align-items-center justify-content-center flex-column h-100">
+						<img src="img/images/login-v2.png" class="img-fluid img-login" alt="login" width="500">
+						<div class="mt-5 text-center d-none">
+							<h2>Fast, Efficient and Productive</h2>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, laboriosam?</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6 col-xl-4 mx-auto d-table">
+					<div class="d-table-cell align-middle">
+						<div class="card mb-0">
+							<div class="card-body">
+								<div class="text-center" style="margin-top: -40px;">
+									<img src="img/images/logo-white.png" alt="logo" class="img-fluid">
+								</div>
+								<div class="text-center" style="margin-top: -20px;">
+									<h1 class="h2">Welcome back!</h1>
+									<p class="text-gray-500 small mb-5">
+										Sign in to your account to continue
+									</p>
+								</div>
+								<div class="m-sm-3">
+									<form>
+										<div class="mb-4">
+											<input class="form-control form-control-lg" id="signInEmail" type="email" name="email" placeholder="Email">
+											  <span class="error text-danger small d-none" id="signInEmailError">Email is required.</span>
+											  <span class="success text-success small d-none" id="signInEmailSuccess">Valid email!</span>
+										</div>
+										<div class="mb-4">
+											<input class="form-control form-control-lg" id="signInPassword" type="password" name="password" placeholder="Password">
+											 <span class="error text-danger small d-none" id="signInPasswordError">Email is required.</span>
+											 <span class="success text-success small d-none" id="signInPasswordSuccess">Valid email!</span>
+											
+											<div class="text-end mt-2">
+												<a href="javascript:void(0)">Forgot password?</a>
+											</div>
+										</div>
+										<div class="d-grid gap-2 mt-3">
+											<button type="button" id="signIn" class="btn btn-lg btn-primary">Sign in</button>
+										</div>
+									</form>
+									<div class="row my-3 my-lg-4">
+										<div class="col">
+											<hr>
+										</div>
+										<div class="col-auto text-uppercase d-flex align-items-center">Or</div>
+										<div class="col">
+											<hr>
+										</div>
+									</div>
+									<div class="d-grid mb-3">
+										<button type="button" class="btn btn-google-link btn-lg"><i class="fab fa-fw fa-google"></i> Sign in with Google</button>
+									</div>
+									<div class="text-center mb-3">
+										Don't have an account? <a href="/pages-sign-up.html">Sign up</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<!-- script -->
+	<script src="js/app.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/all.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script type="text/javascript" src="js/daterangepicker.min.js"></script>
+</body>
+
+</html>

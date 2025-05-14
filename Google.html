@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="shortcut icon" href="img/icons/icon-48x48.jpg" />
+
+	<title>RMS FUDGE</title>
+
+	<link href="css/all.css" rel="stylesheet">
+	<link id="theme-style" href="css/light.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+
+	<script>
+		(function () {
+			const savedTheme = localStorage.getItem('theme') || 'light';
+			document.getElementById('theme-style').setAttribute('href', `css/${savedTheme}.css`);
+		})();
+	</script>
+	<script src="https://kit.fontawesome.com/2af8cee063.js" crossorigin="anonymous"></script>
+</head>
+
+<body data-theme="light">
+	<div class="wrapper">
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="Dashboard.html">
+          			<span class="align-middle">
+						<img src="img/images/logo-white.png" alt="logo" style="margin: -50px;">
+					</span>
+        		</a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Pages
+					</li>	
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="Dashboard.html">
+              				<i class="align-middle" data-feather="home"></i> <span class="align-middle">Dashboard</span>
+            			</a>
+					</li>
+					<li class="sidebar-item active">
+						<a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span class="align-middle">Platform Reviews</span>
+						</a>
+						<ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item active"><a class="sidebar-link" href="/Google.html">Google</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/TripAdvisor.html">Trip Advisor</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Booking.html">Booking</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Expedia.html">Expedia</a></li>
+						</ul>
+					</li>
+					<!--  -->
+					<li class="sidebar-item">
+						<a data-bs-target="#qrCode" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span class="align-middle">QR Codes</span>
+						</a>
+						<ul id="qrCode" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/Choose-Design.html">Choose Design</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Edit-Design.html">Edit Design</a></li>
+						</ul>
+					</li>
+					<!--  -->
+					<li class="sidebar-item">
+						<a data-bs-target="#settings" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span class="align-middle">Settings</span>
+						</a>
+						<ul id="settings" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+							<li class="sidebar-item"><a class="sidebar-link" href="/Google-Business-Name.html">Google Business Name</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Trip-Business-Name.html">TripAdv Business Name</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Booking-Business-Name.html">Booking Business Name</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Expedia-Business-Name.html">Expedia Business Name</a></li>
+						</ul>
+					</li>
+					<!--  -->
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="pages-sign-in.html">
+							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign In</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="pages-sign-up.html">
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- main -->
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon" href="javascript:void(0)" id="theme-toggle">
+								<div class="position-relative light-mode">
+									<i class="align-middle" data-feather="sun"></i>
+								</div>
+								<div class="position-relative dark-mode d-none">
+									<i class="align-middle icon-moon" data-feather="moon"></i>
+								</div>
+							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator">4</span>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header">
+									4 New Notifications
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Lorem ipsum</div>
+												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
+													hendrerit et.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-primary" data-feather="home"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Login from 192.186.1.8</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-success" data-feather="user-plus"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">New connection</div>
+												<div class="text-muted small mt-1">Christina accepted your request.
+												</div>
+												<div class="text-muted small mt-1">14h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all notifications</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown d-none">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown"
+								data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="message-square"></i>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										4 New Messages
+									</div>
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-5.jpg"
+													class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Vanessa Tucker</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
+													tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-2.jpg"
+													class="avatar img-fluid rounded-circle" alt="William Harris">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">William Harris</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod
+													vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-4.jpg"
+													class="avatar img-fluid rounded-circle" alt="Christina Mason">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Christina Mason</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.
+												</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-3.jpg"
+													class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Sharon Lessman</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
+													posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all messages</a>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item dropdown d-none">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1 rounded-circle"
+									alt="lorem ipsum" /> <span class="text-dark">Charles Hall</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="pie-chart"></i> Analytics</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="javascript:void(0)">Log out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+					<h1 class="h3 mb-4 poppins-light">Your <span class="text-reviews">reviews</span> from all the
+						platforms</h1>
+					<div class="platform-nav d-flex justify-content-between">
+						<ul class="platform-list">
+							<li class="platform-item pe-3"><a class="btn btn-lg theme-dark-text-black active" href="google.html"><img
+										src="img/icons/google.png" alt="google" class="img-fluid"> Google</a></li>
+							<li class="platform-item pe-3"><a class="btn btn-lg theme-dark-text-black" href="TripAdvisor.html"><img
+										src="img/icons/tripadvisor-icon.png" alt="tripadvisor" class="img-fluid"> Trip
+									Advisor</a></li>
+							<li class="platform-item pe-3"><a class="btn btn-lg theme-dark-text-black" href="Booking.html"><img
+										src="img/icons/booking.png" alt="booking" class="img-fluid"> Booking.com</a>
+							</li>
+							<li class="platform-item"><a class="btn btn-lg theme-dark-text-black" href="Expedia.html"><img
+										src="img/icons/expedia.png" alt="expedia" class="img-fluid"> Expedia</a></li>
+						</ul>
+						<ul class="platform-list">
+							<li class="platform-item filter-icon"><a class="btn btn-lg btn-filter theme-dark-text-black" href="javascript:void(0)"><img
+										src="img/icons/Tune.png" alt="logo" class="img-fluid"></a></li>
+						</ul>
+					</div>
+					<!--  -->
+					<div class="filters-section" id="layoutBox" style="display: none;">
+						<div class="d-flex justify-content-between flex-wrap align-items-end">
+							<div class="filter-fields d-flex flex-wrap align-items-center">
+								<div class="pe-2 pe-md-3 pb-3 pb-md-0 w-100-mob">
+									<label for="date"
+										class="form-label d-block text-uppercase font12 poppins-medium text-black mb-1">Date</label>
+										<input id="dateInput" type="text" name="daterange" placeholder="Select Date" class="form-control w-100">
+								</div>
+								<div class="pe-2 pe-md-3 pb-3 pb-md-0 w-100-mob">
+									<label for="selectpickerIcons"
+										class="form-label d-block text-uppercase font12 poppins-medium text-black mb-1">Rating</label>
+									<select class="form-select">
+										<option selected="">Select Rating</option>
+										<option>1 STAR</option>
+										<option>2 STAR</option>
+										<option>3 STAR</option>
+									</select>
+								</div>
+								<div class="pe-2 pe-md-3 pb-3 pb-md-0 w-100-mob">
+									<label for="platform"
+										class="form-label d-block text-uppercase font12 poppins-medium text-black mb-1">Platform</label>
+									<select class="form-select">
+										<option selected="">Select Platform</option>
+										<option value="Google" data-icon="bx bxl-google">Google</option>
+									</select>
+								</div>
+								<div class="pe-2 pe-md-3 pb-3 pb-md-0 w-100-mob">
+									<label for="Response"
+										class="form-label d-block text-uppercase font12 poppins-medium text-black mb-1">Review
+										Status</label>
+									<select class="form-select">
+										<option selected="">Select Rating</option>
+										<option value="reply">Reply</option>
+										<option value="without_reply">Without Reply</option>
+									</select>
+								</div>
+							</div>
+							<div class="filter-buttons d-flex align-items-center mt-2 mt-md-0 w-100-mob">
+								<div class="width-100 vertical-cente w-100-mob">
+									<button class="btn btn-primary w-100 border-0 py-2 py-md-0">Apply</button>
+								</div>
+
+								<div class="width-100 vertical-center w-100-mob ps-3">
+									<button onclick="clearFilters()"
+										class="btn btn-secondary w-100 clear-btn2 border-0 py-2 py-md-0">Clear</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--  -->
+					<div class="accordion reviews-accordion" id="accordionPrimary">
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed bg-white" type="button"
+									data-bs-toggle="collapse" data-bs-target="#primary-collapseOne"
+									aria-expanded="false" aria-controls="primary-collapseOne">
+									<div class="row">
+										<div class="col-md-3 col-sm-3 d-flex align-items-center">
+											<img class="rounded-circle ms-lg-2" src="img/icons/google2x.png" alt="Avatar"
+												width="40px">
+											<div class="ms-lg-2">
+												<div class="user-meta-info">
+													<h6 class="user-name mb-1 ms-2" data-name="Emma Adams">Emma Adams
+													</h6>
+													<span class="ms-2 text-color-primary"><i>July 19, 2012</i></span>
+												</div>
+											</div>
+										</div>
+										<!----->
+										<div class="col-md-8 col-sm-8">
+											<div class="user-meta-info ms-lg-2">
+												<div class="mb-2 mt-3 mt-md-0">
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-uncheck lead"></i>
+												</div>
+												<p class="truncate mb-0 theme-dark-text-white">
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+													aperiam. Praesentium, doloremque accusamus explicabo deserunt iure
+													maiores? Sit tempore quisquam vel, aliquam minima totam velit ut
+													corrupti quaerat blanditiis odit explicabo cupiditate quasi maxime,
+													ducimus aut? Nulla repudiandae officiis veritatis repellat odio
+													illum quibusdam mollitia inventore exercitationem necessitatibus.
+													Repellendus, minus!
+												</p>
+											</div>
+										</div>
+									</div>
+								</button>
+							</h2>
+							<div id="primary-collapseOne" class="accordion-collapse bg-white collapse"
+								data-bs-parent="#accordionPrimary">
+								<div class="accordion-body">
+									<div class="row review-box">
+										<div class="col-sm-6">
+											<h6 class="client-review mb-3" data-name="client-review">Client's Review
+											</h6>
+											<p class="inter-light theme-dark-text-white">Lorem ipsum dolor sit amet, consectetur adipisicing
+												elit, sed do eiusmod
+												tempor incididunt ut
+												labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+												exercitation ullamco
+												laboris nisi ut aliquip ex ea commodo consequat.</p>
+										</div>
+										<div class="col-sm-6 review-section">
+											<div class="review-chatbot">
+												<textarea id="myReview2" class="inter-light pb-1 theme-dark-text-white" name="review"
+													rows="4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </textarea>
+												<div class="d-flex align-items-center pt-3 border-top-1">
+													<div class="">
+														<button class="ai-btn"><img src="img/icons/chatGpt.png" alt="chatGpt" class="img-fluid pe-1">AI Assistant</button>
+													</div>
+													<div class="ms-3">
+														<button class="clear-btn"><img src="img/icons/remove.png" alt="Clear" class="img-fluid pe-2">Clear</button>
+													</div>
+													<div class="ms-3">
+														<img src="img/icons/copy.png" alt="copy" class="img-fluid pe-1">
+													</div>
+													<div class="ms-auto">
+														<img src="img/icons/Sent.png" alt="chatGpt" class="img-fluid">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--  -->
+					<div class="accordion reviews-accordion mt-4" id="accordionSecondary">
+						<div class="accordion-item">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed bg-white" type="button"
+									data-bs-toggle="collapse" data-bs-target="#primary-collapseTwo"
+									aria-expanded="false" aria-controls="primary-collapseTwo">
+									<div class="row">
+										<div class="col-md-3 col-sm-3 d-flex align-items-center">
+											<img class="rounded-circle ms-lg-2" src="img/icons/google2x.png" alt="Avatar"
+												width="40px">
+											<div class="ms-lg-2">
+												<div class="user-meta-info">
+													<h6 class="user-name mb-1 ms-2" data-name="Emma Adams">Emma Adams
+													</h6>
+													<span class="ms-2 text-color-primary"><i>July 19, 2012</i></span>
+												</div>
+											</div>
+										</div>
+										<!----->
+										<div class="col-md-8 col-sm-8">
+											<div class="user-meta-info ms-lg-2">
+												<div class="mb-2 mt-3 mt-md-0">
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-checked lead"></i>
+													<i class="fa-solid fa-star star-uncheck lead"></i>
+												</div>
+												<h6 class="review-subtitle mb-0" data-name="review">"A beautiful hotel with a great location"</h6>
+												<p class="truncate mb-0 theme-dark-text-white">
+													Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+													aperiam. Praesentium, doloremque accusamus explicabo deserunt iure
+													maiores? Sit tempore quisquam vel, aliquam minima totam velit ut
+													corrupti quaerat blanditiis odit explicabo cupiditate quasi maxime,
+													ducimus aut? Nulla repudiandae officiis veritatis repellat odio
+													illum quibusdam mollitia inventore exercitationem necessitatibus.
+													Repellendus, minus!
+												</p>
+											</div>
+										</div>
+									</div>
+								</button>
+							</h2>
+							<div id="primary-collapseTwo" class="accordion-collapse bg-white collapse"
+								data-bs-parent="#accordionSecondary">
+								<div class="accordion-body">
+									<div class="row review-box">
+										<div class="col-sm-6">
+											<h6 class="client-review mb-3" data-name="client-review">Client's Review
+											</h6>
+											<p class="inter-light theme-dark-text-white">Lorem ipsum dolor sit amet, consectetur adipisicing
+												elit, sed do eiusmod
+												tempor incididunt ut
+												labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+												exercitation ullamco
+												laboris nisi ut aliquip ex ea commodo consequat.</p>
+										</div>
+										<div class="col-sm-6 review-section">
+											<div class="review-chatbot">
+												<textarea id="myReview2" class="inter-light pb-1 theme-dark-text-white" name="review"
+													rows="4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </textarea>
+												<div class="d-flex align-items-center pt-3 border-top-1">
+													<div class="">
+														<button class="ai-btn"><img src="img/icons/chatGpt.png" alt="chatGpt" class="img-fluid pe-1">AI Assistant</button>
+													</div>
+													<div class="ms-3">
+														<button class="clear-btn"><img src="img/icons/remove.png" alt="Clear" class="img-fluid pe-2">Clear</button>
+													</div>
+													<div class="ms-3">
+														<img src="img/icons/copy.png" alt="copy" class="img-fluid pe-1">
+													</div>
+													<div class="ms-auto">
+														<img src="img/icons/Sent.png" alt="chatGpt" class="img-fluid">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--  -->
+					<br><br>
+				</div>
+			</main>
+		</div>
+	</div>
+	<!-- script -->
+	<script src="js/app.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/all.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script type="text/javascript" src="js/daterangepicker.min.js"></script>
+</body>
+
+</html>

@@ -2877,7 +2877,7 @@ textarea.form-control-lg {
 
 .input-group-text {
     align-items: center;
-    background-color: var(--bs-tertiary-bg);
+    background-color: var(--bs-white);
     border: 1px solid var(--bs-border-color);
     border-radius: var(--bs-border-radius);
     color: #495057;
@@ -2887,7 +2887,7 @@ textarea.form-control-lg {
     line-height: 1.5;
     padding: .3rem .85rem;
     text-align: center;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .input-group-lg>.btn,.input-group-lg>.form-control,.input-group-lg>.form-select,.input-group-lg>.input-group-text {

@@ -899,3 +899,11 @@ div#DataTables_Table_0_wrapper div.dataTables_paginate ul.pagination .page-item 
 div#DataTables_Table_0_wrapper div.dataTables_paginate ul.pagination .page-item .page-link:focus {
     box-shadow: none !important;
 }
+
+.site-alert {
+    position: absolute !important;
+    top: 5px;
+    left: 50%;
+    z-index: 999;
+    transform: translateX(-50%);
+}

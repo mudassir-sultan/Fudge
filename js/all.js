@@ -375,7 +375,7 @@ $(document).ready(function () {
 
     // Delete Client List 
     $('.deleteClient').on('click', function () {
-        Swal.fire ({
+        Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
             icon: "warning",
@@ -383,14 +383,56 @@ $(document).ready(function () {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
+        }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
-                icon: "success"
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
                 });
             }
+        });
+    });
+    // Profile modal
+    $("#editProfileForm").on("submit", function (event) {
+        event.preventDefault();
+        const fullName = $("#fullName").val();
+        const email = $("#email").val();
+        const phone = $("#phone").val();
+
+        Swal.fire({
+            title: 'Profile Updated!',
+            text: 'Your profile information has been successfully updated.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            customClass: {
+                popup: 'my-swal-popup',
+                title: 'h3 mb-0',
+                htmlContainer: 'small',
+                confirmButton: 'my-swal-button'
+            }
+        }).then(() => {
+            $("#profileModal").modal('hide');
+        });
+    });
+    // Edit Passowrd
+    $("#updatePasswordForm").on("submit", function (event) {
+        event.preventDefault();
+        const email = $("#email").val();
+
+        Swal.fire({
+            title: 'Password Updated!',
+            text: 'Your Password information has been successfully updated.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            customClass: {
+                popup: 'my-swal-popup',
+                title: 'h3 mb-0',
+                htmlContainer: 'small',
+                confirmButton: 'my-swal-button'
+            }
+        }).then(() => {
+            $("#updatePasswordModal").modal('hide');
         });
     });
 });

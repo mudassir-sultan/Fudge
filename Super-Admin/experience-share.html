@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="img/icons/icon-48x48.jpg" />
+
+    <title>Positive Feedback</title>
+
+    <link href="../css/all.css" rel="stylesheet">
+    <link id="theme-style" href="../css/light.css" rel="stylesheet">
+    <link href="../fonts/boxicons.css"  rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.getElementById('theme-style').setAttribute('href', `../css/${savedTheme}.css`);
+        })();
+    </script>
+    <script src="https://kit.fontawesome.com/2af8cee063.js" crossorigin="anonymous"></script>
+</head>
+
+  <body>
+    <!-- Content -->
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center h-100">
+        <div class="col col-lg-11 col-xxl-8">
+          <div class="card-template-wrap p-2 p-md-4 p-lg-5">
+            <div class="card-template h-100 text-center px-3 px-md-4 py-5 p-lg-5">
+              <div class="card-template-body">
+                <span class="d-inline-block mb-4 mb-lg-5 bg-label-primary rounded p-2 px-3 happy-state">
+                  <i class="bx bx-happy-alt display-4"></i>
+                </span>
+                <h2 class="text-dark-black mb-3 mb-lg-4 bold">
+                  Share Your Wonderful Experience With Us!
+                </h2>
+                <p class="mb-3 mb-lg-4 mx-2 mx-lg-0 fst-italic">
+                  We're delighted to know that you had a great stay with us! 😊✨ Please take a moment to share your positive experience; it would mean a lot to us. 🌟🙏
+                </p>
+                <div class="mt-4">
+                  <button id="generateReviewBtn" class="btn btn-primary px-3">
+                    <i class="bx bxs-magic-wand pe-1 fs-4"></i>Generate Review with AI
+                  </button>
+                </div>   
+                <form action="" id="generate-form" method="post" class="w-100">
+                <!-- Hidden sections initially -->
+                <div id="chatSection" class="modal-body px-3 px-lg-5 mt-4" style="display: none;">
+                  <!-- Input Field and Conversation -->
+                  <div class="chat-history-footer rounded mb-3 mb-lg-0 d-flex">
+                    <form class="form-send-message d-flex justify-content-between align-items-center">
+                      <input id="reviewInput" class="form-control message-input border-0 shadow-none" placeholder="Write your experience to generate with AI ...">
+                      <div class="message-actions d-flex align-items-center">
+                        <button id="sendReviewBtn" type="button" class="btn btn-primary d-flex send-msg-btn">
+                          <i class="bx bx-paper-plane me-md-1 me-0"></i>
+                          <span class="align-middle d-md-inline-block d-none">Generate</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <h4 class="bold text-dark-black mt-4"> Or use below suggestion</h4>
+                  <!-- Conversation starters -->
+                  <div class="row gy-3 mt-1 mb-2 mt-lg-0">
+                    <div class="col-lg-6 col-md-12 mb-3">
+                      <div class="converstation-radio-card rounded bg-card-secondary h-100">
+                        <input type="radio" id="converstation-first" name="suggested-review" value="converstation-first">
+                        <label for="converstation-first" class="position-relative p-2 shadow w-100 h-100 rounded">
+                          <div class="mb-2">
+                            <i class="bx bx-star bx-sm d-inline-block rounded p-2 bg-label-warning fs-6"></i>
+                          </div>
+                          <span class="text-center text-dark-black">The stay was delightful with great amenities.</span>
+                        </label>
+                      </div>
+                    </div>                 
+                    <!-- Conversation starter 2 -->
+                    <div class="col-lg-6 col-md-12 mb-3">
+                      <div class="converstation-radio-card rounded bg-card-secondary h-100">
+                        <input type="radio" id="converstation-second" name="suggested-review" value="converstation-second">
+                        <label for="converstation-second" class="position-relative p-2 shadow w-100 h-100 rounded">
+                          <div class="mb-2">
+                            <i class="bx bx-star bx-sm d-inline-block rounded p-2 bg-label-warning fs-6"></i>
+                          </div>
+                          <span class="text-center text-dark-black">We loved the ambiance and the location.</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+                <!-- Hidden text-block initially -->
+                <div id="textBlockSection" class="generate-review mt-4" style="display: none;">
+                  <div id="generatedReviewBlock" class="text-block rounded box-shadow p-3"></div>
+                  <div class="copy-review mt-3">
+                    <button id="copyReviewBtn" type="button" class="btn btn-primary me-2">
+                      <i class="bx bx-copy me-2"></i>Copy
+                    </button>
+                    <button id="deleteReviewBtn" type="button" class="btn btn-primary">
+                      <i class="bx bx-trash me-2"></i>Delete
+                    </button>
+                  </div>
+                </div>
+                </form>
+                <!-- Initially hidden heading -->
+                <div>
+                  <h6 id="platformHeading" class="mt-5 bold text-dark-black" style="display: none;">
+                    Copy the above review and choose a platform to post.
+                  </h6>
+                </div>               
+                <!-- Always visible heading (initially) -->
+                <div class="mt-5 links">
+                  <h6 id="reviewReminderHeading" class="bold text-dark-black">
+                    Click on the platforms below to give us a review: ⭐
+                  </h6>
+                  <div class="d-flex justify-content-center align-items-center mt-4">
+                    <a href="https://www.google.com/" target="_blank" class="d-block text-decoration-none p-2 px-3 text-link-primary">
+                      <span class="d-block rounded">
+                        <img src="../img/icons/brands/google.png" alt="client logo" class="client-logo img-fluid" width="50">
+                      </span>
+                    </a>
+                    <button type="button" class="btn-transparent p-2 px-3 text-link-primary" data-bs-toggle="modal" data-bs-target="#tripAlertModal">
+                      <span class="d-block rounded">
+                        <img src="../img/icons/brands/tripadvisor-icon.png" alt="client logo" class="client-logo img-fluid" width="56">
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- script -->
+    <script src="../js/app.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/all.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/daterangepicker.min.js"></script>
+    <script>
+      // Flag to track the visibility state
+      let isChatSectionVisible = false;
+      
+      document.getElementById("generateReviewBtn").addEventListener("click", function() {
+      const chatSection = document.getElementById("chatSection");
+      const textBlockSection = document.getElementById("textBlockSection"); // Updated
+      const reviewInput = document.getElementById("reviewInput"); // Get the input field
+      const platformHeading = document.getElementById("platformHeading"); // Platform heading element
+      const reviewReminderHeading = document.getElementById("reviewReminderHeading"); // Review reminder heading
+      
+      // Toggle visibility of chat and text area sections
+      if (isChatSectionVisible) {
+      // If sections are visible, hide them
+      chatSection.style.display = "none";
+      textBlockSection.style.display = "none"; // Updated
+      platformHeading.style.display = "none"; // Hide the platform heading
+      reviewReminderHeading.style.display = "block"; // Show the original heading
+      } else {
+      // If sections are hidden, show the chat section
+      chatSection.style.display = "block";
+      // Hide the text block section initially
+      textBlockSection.style.display = "none"; // Updated
+      // Clear the input field when showing the chat section
+      reviewInput.value = "";
+      platformHeading.style.display = "none"; // Hide the platform heading initially
+      reviewReminderHeading.style.display = "block"; // Show the original heading
+      }
+      
+      // Toggle the visibility state
+      isChatSectionVisible = !isChatSectionVisible;
+      });
+      
+      document.getElementById("sendReviewBtn").addEventListener("click", function() {
+      // Get the typed review
+      const reviewText = document.getElementById("reviewInput").value;
+      const platformHeading = document.getElementById("platformHeading"); // Platform heading element
+      const reviewReminderHeading = document.getElementById("reviewReminderHeading"); // Review reminder heading
+      
+      if (reviewText.trim() !== "") {
+      // Show the text-block section
+      document.getElementById("textBlockSection").style.display = "block";
+      // Populate the text block with the review
+      document.getElementById("generatedReviewBlock").innerText = reviewText;
+      
+      // Show the heading to copy the review and choose a platform
+      platformHeading.style.display = "block";
+      
+      // Hide the original heading about posting a review
+      reviewReminderHeading.style.display = "none";
+      }
+      });
+      
+      // Automatically add selected review to the text block
+      document.querySelectorAll('input[name="suggested-review"]').forEach(function(radio) {
+      radio.addEventListener("change", function() {
+      const platformHeading = document.getElementById("platformHeading"); // Platform heading element
+      const reviewReminderHeading = document.getElementById("reviewReminderHeading"); // Review reminder heading
+      
+      // Show the text block section when a suggestion is selected
+      document.getElementById("textBlockSection").style.display = "block";
+      
+      // Get the selected review text from the associated label
+      const selectedReviewText = this.nextElementSibling.querySelector("span").textContent;
+      
+      // Populate the text block with the selected review
+      document.getElementById("generatedReviewBlock").innerText = selectedReviewText;
+      
+      // Show the heading to copy the review and choose a platform
+      platformHeading.style.display = "block";
+      
+      // Hide the original heading about posting a review
+      reviewReminderHeading.style.display = "none";
+      });
+      });
+      
+      // Copy functionality
+      document.getElementById("copyReviewBtn").addEventListener("click", function() {
+      const reviewText = document.getElementById("generatedReviewBlock").innerText;
+      
+      // Create a temporary textarea to hold the text for copying
+      const tempTextarea = document.createElement("textarea");
+      tempTextarea.value = reviewText;
+      document.body.appendChild(tempTextarea);
+      tempTextarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempTextarea);
+      
+      // Optional: Provide feedback to the user
+      alert("Review copied to clipboard!");
+      });
+      
+      // Delete functionality
+      document.getElementById("deleteReviewBtn").addEventListener("click", function() {
+      const reviewTextBlock = document.getElementById("generatedReviewBlock");
+      
+      // Clear the text block
+      reviewTextBlock.innerText = "";
+      
+      // Optional: Provide feedback to the user
+      alert("Review deleted!");
+      });
+    </script>
+  </body>
+</html>

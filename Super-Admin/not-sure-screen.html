@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="img/icons/icon-48x48.jpg" />
+
+    <title>Not Sure</title>
+
+    <link href="../css/all.css" rel="stylesheet">
+    <link id="theme-style" href="../css/light.css" rel="stylesheet">
+    <link href="../fonts/boxicons.css"  rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.getElementById('theme-style').setAttribute('href', `../css/${savedTheme}.css`);
+        })();
+    </script>
+</head>
+
+  <body>
+    <!-- Content -->
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center h-100">
+        <div class="col col-lg-11 col-xxl-8">
+          <div class="card-template-wrap p-2 p-md-4 p-lg-5">
+            <div class="card-template h-100 text-center px-3 px-md-4 py-5 p-lg-5">
+              
+          <!-- Logo -->
+            <div class="logo-box mb-4">
+              <img src="../img/logo/HolidayInn-transparent.png" width="200" alt="logo" class="img-fluid">
+            </div>
+              <div class="card-template-body">
+                <div class="star-box">
+                    <h2 class="text-dark-black mb-3 mb-lg-5 fw-bold">
+                        How's Your Stay With Us? 😊<span class="d-md-inline-block d-none">⭐</span>
+                    </h2>
+                    <div class="rating-section mb-4 px-3 px-md-4 py-3 border shadow">
+                        <label><i class="bx bx-bed d-inline-block rounded p-2 bg-label-primary fs-6 me-2"></i> Room</label>
+                        <div class="rating" data-rating="0" data-category="room"></div>
+                     </div>
+                    <div class="rating-section mb-4 px-3 px-md-4 py-3 border shadow">
+                        <label><i class="bx bx-cog d-inline-block rounded p-2 bg-label-primary fs-6 me-2"></i> Service</label>
+                        <div class="rating" data-rating="0" data-category="service"></div>
+                    </div>
+                    <div class="rating-section mb-4 px-3 px-md-4 py-3 border shadow">
+                        <label><i class="bx bx-category d-inline-block rounded p-2 bg-label-primary fs-6 me-2"></i> Amenities</label>
+                        <div class="rating" data-rating="0" data-category="amenities"></div>
+                    </div>
+                    <div class="rating-section mb-4 px-3 px-md-4 py-3 border shadow">
+                      <label><i class="bx bxs-package d-inline-block rounded p-2 bg-label-primary fs-6 me-2"></i> Comfort</label>
+                      <div class="rating" data-rating="0" data-category="comfort"></div>
+                   </div>
+                </div>
+                <div class="selected-star">
+                  <!-- Overall Rating Box will be dynamically inserted here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script -->
+    <script src="../js/app.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/all.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/daterangepicker.min.js"></script>
+  </body>
+</html>

@@ -436,3 +436,329 @@ $(document).ready(function () {
         });
     });
 });
+
+// ------------------------------------------------------------------
+
+$(document).ready(function() {
+    let ratings = {
+        room: 0,
+        service: 0,
+        amenities: 0,
+        comfort: 0,
+        cleanliness:0,
+        experience:0
+    };
+
+    let ratingsSet = {
+        room: false,
+        service: false,
+        amenities: false,
+        comfort: false,
+        cleanliness:false,
+        experience:false
+    };
+
+    function setStars(ratingElement, ratingValue) {
+        const stars = ratingElement.children('.star');
+        stars.each(function() {
+            const starValue = parseFloat($(this).data('value'));
+            if (starValue <= ratingValue) {
+                $(this).removeClass('half').addClass('full');
+            } else if (starValue - 0.5 === ratingValue) {
+                $(this).removeClass('full').addClass('half');
+            } else {
+                $(this).removeClass('full half');
+            }
+        });
+    }
+
+    function createStars(ratingElement) {
+        for (let i = 1; i <= 5; i++) {
+            const star = $('<span/>', {
+                'class': 'bx bx-star star',
+                'data-value': i,
+            });
+            ratingElement.append(star);
+        }
+    }
+
+    function updateSelectedStarDisplay() {
+        let totalRating = 0;
+        let ratingCount = 0;
+
+        for (const key in ratings) {
+            if (ratingsSet[key]) {
+                totalRating += ratings[key];
+                ratingCount++;
+            }
+        }
+
+        if (ratingCount === 4) { // Ensure all 4 ratings are set
+            let averageRating = totalRating / ratingCount;
+            averageRating = Math.round(averageRating * 2) / 2;  // Round to nearest 0.5
+
+            const averageRatingElement = $('<div/>', {
+                'class': 'average-rating'
+            });
+
+            // Determine overall rating text based on average rating
+            let overallRatingText = '';
+
+            if (averageRating >= 4 && averageRating <= 5) {
+                overallRatingText = 'Overall Ratings 😄';
+            } else if (averageRating >= 0 && averageRating <= 3.5) {
+                overallRatingText = 'Overall Ratings 😔';
+            }
+
+            // Display overall rating text
+            const overallRatingTextElement = $('<div/>', {
+                'class': 'overall-rating-text',
+                'text': overallRatingText
+            });
+            averageRatingElement.append(overallRatingTextElement);
+
+            // Display average rating number
+            const averageScore = $('<span/>', {
+                'class': 'average-score',
+                'text': averageRating.toFixed(1)
+            });
+            averageRatingElement.append(averageScore);
+
+            // Create stars for display in stars-text
+            const starsText = $('<div/>', {
+                'class': 'stars-text'
+            });
+
+            // Loop to create all 5 stars
+            for (let i = 1; i <= 5; i++) {
+                const star = $('<span/>', {
+                    'class': 'bx bx-star star',
+                    'data-value': i,
+                });
+
+                // Determine if star should be full, half, or empty
+                if (i <= averageRating) {
+                    star.addClass('full');
+                } else if (i - 0.5 === averageRating) {
+                    star.addClass('half');
+                }
+
+                starsText.append(star);
+            }
+
+            // Append stars to averageRatingElement
+            averageRatingElement.append(starsText);
+
+            // Create submit button
+            const submitButton = $('<button/>', {
+                'id': 'submit-btn',
+                'class': 'btn btn-primary my-3 w-100 py-2',
+                'text': 'Submit'
+            });
+
+            // Check if the current page URL matches the specified URL
+            if (window.location.href === 'https://rms.ranqinxz.com/frontend/customer-impressions.html') {
+                // Create and append the textarea
+                const textarea = $('<textarea/>', {
+                    'class': 'form-control my-3 w-100',
+                    'placeholder': 'Please provide additional feedback here...', 'rows':'6', 'cols':'60'
+                });
+                averageRatingElement.append(textarea);
+            }
+
+            averageRatingElement.append(submitButton);
+
+            $('.selected-star').empty().append(averageRatingElement).addClass('border rounded shadow');
+
+            // Handle submit button click
+            submitButton.on('click', function() {
+                // Check if the current page URL matches the specified URL
+                if (window.location.href === 'https://rms.ranqinxz.com/frontend/customer-impressions.html') {
+                    // Redirect to post-review-submission.html
+                    window.location.href = 'https://rms.ranqinxz.com/frontend/post-review-submission.html';
+                } else {
+                    // Redirect logic based on average rating
+                    if (averageRating >= 0 && averageRating <= 3.5) {
+                        window.location.href = 'negative-feedback.html';
+                    } else if (averageRating >= 4 && averageRating <= 5) {
+                        window.location.href = 'positive-feedback.html';
+                    }
+                }
+            });
+        }
+    }
+
+    $('.rating').each(function() {
+        const rating = $(this).data('rating');
+        createStars($(this));
+        setStars($(this), rating);
+    });
+
+    $('.rating').on('mousemove', '.star', function(e) {
+        const ratingElement = $(this).closest('.rating');
+        const offset = $(this).offset();
+        const relativeX = e.pageX - offset.left;
+        const width = $(this).width();
+        let ratingValue = parseFloat($(this).data('value'));
+
+        if (relativeX < width / 2) {
+            ratingValue -= 0.5;
+        }
+
+        setStars(ratingElement, ratingValue);
+    });
+
+    $('.rating').on('mouseleave', function() {
+        const rating = $(this).data('rating');
+        setStars($(this), rating);
+    });
+
+    $('.rating').on('click', '.star', function(e) {
+        const ratingElement = $(this).closest('.rating');
+        const offset = $(this).offset();
+        const relativeX = e.pageX - offset.left;
+        const width = $(this).width();
+        let ratingValue = parseFloat($(this).data('value'));
+
+        if (relativeX < width / 2) {
+            ratingValue -= 0.5;
+        }
+
+        ratingElement.data('rating', ratingValue);
+
+        // Determine which rating section this is and update the corresponding rating
+        const label = ratingElement.prev('label').text().toLowerCase();
+        if (label.includes('room')) {
+            ratings.room = ratingValue;
+            ratingsSet.room = true;
+        } else if (label.includes('service')) {
+            ratings.service = ratingValue;
+            ratingsSet.service = true;
+        } else if (label.includes('amenities')) {
+            ratings.amenities = ratingValue;
+            ratingsSet.amenities = true;
+        } else if (label.includes('comfort')) {
+            ratings.comfort = ratingValue;
+            ratingsSet.comfort = true;
+        } else if (label.includes('cleanliness')) {
+            ratings.cleanliness = ratingValue;
+            ratingsSet.cleanliness = true;
+        } else if (label.includes('experience')) {
+            ratings.experience = ratingValue;
+            ratingsSet.experience = true;
+        }
+
+        setStars(ratingElement, ratingValue);
+        updateSelectedStarDisplay();
+
+        // Add animation to the selected star
+        $(this).addClass('animated').css({
+            'animation': 'animate .5s ease-in-out forwards'
+        });
+    });
+
+    // Initial display update
+    updateSelectedStarDisplay();
+});
+
+// Customer review screen
+
+$(document).ready(function() {
+    let overallRating = 0;
+
+    function setStars(ratingElement, ratingValue) {
+        const stars = ratingElement.children('.star');
+        stars.each(function() {
+            const starValue = parseFloat($(this).data('value'));
+            if (starValue <= ratingValue) {
+                $(this).removeClass('half').addClass('full');
+            } else if (starValue - 0.5 === ratingValue) {
+                $(this).removeClass('full').addClass('half');
+            } else {
+                $(this).removeClass('full half');
+            }
+        });
+    }
+
+    function createStars(ratingElement) {
+        for (let i = 1; i <= 5; i++) {
+            const star = $('<span/>', {
+                'class': 'bx bx-star star',
+                'data-value': i,
+            });
+            ratingElement.append(star);
+        }
+    }
+
+    function updateRatingScore() {
+        let averageRating = Math.round(overallRating * 2) / 2;  // Round to nearest 0.5
+
+        // Update the average score text
+        $('.rating-score').text(averageRating.toFixed(1));
+    }
+
+    $('.rating-stars').each(function() {
+        const rating = $(this).data('rating');
+        createStars($(this));
+        setStars($(this), rating);
+    });
+
+    $('.rating-stars').on('mousemove', '.star', function(e) {
+        const ratingElement = $(this).closest('.rating-stars');
+        const offset = $(this).offset();
+        const relativeX = e.pageX - offset.left;
+        const width = $(this).width();
+        let ratingValue = parseFloat($(this).data('value'));
+
+        if (relativeX < width / 2) {
+            ratingValue -= 0.5;
+        }
+
+        setStars(ratingElement, ratingValue);
+    });
+
+    $('.rating-stars').on('mouseleave', function() {
+        const rating = $(this).data('rating');
+        setStars($(this), rating);
+    });
+
+    $('.rating-stars').on('click', '.star', function(e) {
+        const ratingElement = $(this).closest('.rating-stars');
+        const offset = $(this).offset();
+        const relativeX = e.pageX - offset.left;
+        const width = $(this).width();
+        let ratingValue = parseFloat($(this).data('value'));
+
+        if (relativeX < width / 2) {
+            ratingValue -= 0.5;
+        }
+
+        overallRating = ratingValue;
+        ratingElement.data('rating', ratingValue);
+
+        setStars(ratingElement, ratingValue);
+        updateRatingScore();
+
+        // Add animation to the selected star
+        $(this).addClass('animated').css({
+            'animation': 'animate .5s ease-in-out forwards'
+        });
+    });
+
+    // Handle submit button click
+    $('#customereview-btn').on('click', function() {
+        if (overallRating >= 4) {
+            window.location.href = 'experience-share.html';
+        } else {
+            window.location.href = 'customer-impressions.html';
+        }
+    });
+
+    // Hide submit button if on qrcode-review-submission.html
+    if (window.location.pathname.includes('qrcode-review-submission.html')) {
+        $('#customereview-btn').hide();
+    }
+
+    // Initial display update
+    updateRatingScore();
+});

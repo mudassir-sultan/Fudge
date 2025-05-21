@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="img/icons/icon-48x48.jpg" />
+
+    <title>Thank You</title>
+
+    <link href="../css/all.css" rel="stylesheet">
+    <link id="theme-style" href="../css/light.css" rel="stylesheet">
+    <link href="../fonts/boxicons.css"  rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.getElementById('theme-style').setAttribute('href', `../css/${savedTheme}.css`);
+        })();
+    </script>
+</head>
+
+  <body>
+    <!-- Content -->
+    <div class="container h-100">
+      <div class="row align-items-center justify-content-center h-100">
+        <div class="col col-lg-11 col-xxl-8">
+          <div class="card-template-wrap p-2 p-md-4 p-lg-5">
+            <div class="card-template h-100 text-center px-3 px-md-4 py-5 p-lg-5">
+              
+          <!-- Logo -->
+            <div class="logo-box mb-4">
+              <img src="../img/logo/HolidayInn-transparent.png" width="200" alt="logo" class="img-fluid">
+            </div>
+          <!-- Logo -->
+              
+              <div class="card-template-body">
+                <span class="d-inline-block mb-4 mb-lg-5 bg-label-primary rounded p-2 px-3 happy-state">
+                  <i class="bx bx-happy-alt display-4"></i>
+                </span>
+                <h2 class="text-dark-black mb-3 mb-lg-4 bold">
+                  Thank You!
+                </h2>
+                <p class="mb-3 mb-lg-4 mx-2 mx-lg-0 fst-italic">
+                  We appreciate your feedback! Your review helps us improve and serve you better.<br>
+                  Stay tuned for more great experiences with us.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Rating Modal -->
+      <div
+        class="modal fade review-modal"
+        id="generateReview"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="generateReviewModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg mx-3 mx-lg-auto">
+          <div class="modal-content modal-lg bg-white">
+            <div class="modal-header border-bottom-0 p-4">
+              <h5 class="modal-title" id="generateReviewModalLabel"></h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body px-3 px-lg-5 pb-lg-5">
+              <div class="generate-review">
+                <textarea name="generate-review" id="generate-review" class="textarea rounded box-shadow" rows="12" cols="50">I recently stayed here and it was delightful! The amenities were top-notch and added to the overall experience. The attention to detail and quality service made my stay truly enjoyable. Highly recommend for anyone looking for a comfortable and pleasant stay. Will definitely visit again! Highly recommend for anyone looking for a comfortable and pleasant stay. Will definitely visit again!
+                </textarea>
+                <div class="copy-review">
+                  <button type="button" class="btn btn-primary me-2"><i class="bx bx-copy"></i></button>
+                  <button type="button" class="btn btn-primary"><i class="bx bx-trash"></i></button>
+                </div>
+              </div>
+              <div class="row gy-3 mt-1 mb-2 mt-lg-0">
+                <!-- Conversation starter 1 -->
+                <div class="col mb-3">
+                  <div class="converstation-radio-card rounded bg-card-secondary h-100">
+                    <input type="radio" id="converstation-first" value="converstation-first">
+                    <label for="converstation-first" class="position-relative p-2 shadow w-100 h-100 rounded">
+                      <div class="mb-2">
+                        <i class="bx bx-star bx-sm d-inline-block rounded p-2 bg-label-warning fs-6"></i>
+                      </div>
+                      <span class="text-center text-dark-black">The stay was delightful with great amenities.</span>
+                    </label>
+                  </div>
+                </div>
+                <!-- Conversation starter 2 -->
+                <div class="col mb-3">
+                  <div class="converstation-radio-card rounded bg-card-secondary h-100">
+                    <input type="radio" id="converstation-second" value="converstation-second">
+                    <label for="converstation-second" class="position-relative p-2 shadow w-100 h-100 rounded">
+                      <div class="mb-2">
+                        <i class="bx bx-star bx-sm d-inline-block rounded p-2 bg-label-warning fs-6"></i>
+                      </div>
+                      <span class="text-center text-dark-black">We loved the ambiance and the location.</span>
+                    </label>
+                  </div>
+                </div>
+                <!--  -->
+              </div>
+              <!-- chat -->
+              <div class="chat-history-footer rounded mb-3 mb-lg-0">
+                <form class="form-send-message d-flex justify-content-between align-items-center">
+                  <input class="form-control message-input border-0 shadow-none" placeholder="Type your message here...">
+                  <div class="message-actions d-flex align-items-center">
+                    <button class="btn btn-primary d-flex send-msg-btn">
+                      <i class="bx bx-paper-plane me-md-1 me-0"></i>
+                      <span class="align-middle d-md-inline-block d-none">Send</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Alert Modal -->
+      <div
+      class="modal fade alert-modal"
+      id="tripAlertModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="tripAlertModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered mx-3 mx-lg-auto">
+        <div class="modal-content bg-white">
+          <div class="modal-header border-bottom-0 p-4">
+            <h5 class="modal-title" id="tripAlertModalLabel"></h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body px-4 pb-5 pt-0 px-lg-5 pb-lg-5">
+            <div class="trip-alert">
+              <div class="text-center">
+                <div class="trip-alert-attention">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg>
+                </div>
+                <h6 class="bold text-dark-black mt-5">
+                  You have to write review of minimum 250 characters
+                </h6>
+                <form action=https://www.tripadvisor.com/ class="mt-5">
+                    <button type="submit" class="btn btn-primary w-100">submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!--  -->
+    </div>
+    <!-- script -->
+    <script src="../js/app.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/all.js"></script>
+    <script src="../js/moment.min.js"></script>
+    <script src="../js/daterangepicker.min.js"></script>
+  </body>
+</html>

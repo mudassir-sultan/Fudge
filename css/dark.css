@@ -33112,3 +33112,6 @@ body[data-theme=colored] .simplebar-scrollbar:before {
 #customerName .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: white;
 }
+.custom-tooltip-trigger {
+    color: var(--bs-black);
+}

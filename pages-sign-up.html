@@ -21,13 +21,14 @@
 			document.getElementById('theme-style').setAttribute('href', `css/${savedTheme}.css`);
 		})();
 	</script>
+	<script src="https://kit.fontawesome.com/2af8cee063.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<main class="d-flex w-100">
 		<div class="container-fluid d-flex flex-column" id="signup">
 			<div class="row vh-100">
-				<div class="col-12 col-lg-6 col-xl-7">
+				<div class="col-12 col-lg-6 col-xl-7 d-none d-lg-block">
 					<div class="d-flex align-items-center justify-content-center flex-column h-100">
 						<img src="img/images/login-v3.png" class="img-fluid img-signup" alt="login" width="500">
 					</div>
@@ -69,10 +70,11 @@
 													<span class="error text-danger small d-none" id="signUpEmailError">Email is required.</span>
 											  		<span class="success text-success small d-none" id="signUpEmailSuccess">Email is Valid</span>
 										</div>
-										<div class="mb-3">
+										<div class="mb-3 position-relative">
 											<input class="form-control form-control-lg" id="signUpPassword" type="password" name="password" placeholder="Password">
-													<span class="error text-danger small d-none" id="signUpPasswordError">Password is required.</span>
-											  		<span class="success text-success small d-none" id="signUpPasswordSuccess">Password is Valid</span>
+											<i class="fa-solid fa-eye position-absolute end-0 translate-middle-14 me-3" id="togglePassword" style="cursor: pointer;"></i>		
+											<span class="error text-danger small d-none" id="signUpPasswordError">Password is required.</span>
+											<span class="success text-success small d-none" id="signUpPasswordSuccess">Password is Valid</span>
 										</div>
 										<div class="form-check align-items-center">
 											<input id="agreementCheckbox" type="checkbox" class="form-check-input" value="" name="remember-me" checked="">

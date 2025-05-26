@@ -7,6 +7,11 @@ $(document).ready(function () {
     updateIcons(savedTheme);
 
     $('#theme-toggle').on('click', function () {
+        const icon = $(this);
+
+        icon.addClass('rotate-once');
+        setTimeout(() => icon.removeClass('rotate-once'), 200);
+
         const currentHref = $themeLink.attr('href') || '';
         const isDark = currentHref.indexOf('dark') !== -1;
         const newTheme = isDark ? 'light' : 'dark';
@@ -435,18 +440,45 @@ $(document).ready(function () {
             $("#updatePasswordModal").modal('hide');
         });
     });
+
+    // Add for eye icon toggle
+    $('#togglePassword').click(function () {
+        const icon = $(this);
+        const input = icon.siblings('input[type="password"], input[type="text"]');
+
+        const isPassword = input.attr('type') === 'password';
+        input.attr('type', isPassword ? 'text' : 'password');
+
+        // Toggle icon class
+        icon.toggleClass('fa-eye');
+        icon.toggleClass('fa-eye-slash');
+    });
+    // Add for Tooltip
+    const $trigger = $('.custom-tooltip-trigger');
+    const $wrapper = $trigger.closest('.tooltip-wrapper');
+
+    $trigger.on('click', function (e) {
+        e.stopPropagation();
+        $wrapper.toggleClass('active');
+    });
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.tooltip-wrapper').length) {
+            $wrapper.removeClass('active');
+        }
+    });
 });
 
 // ------------------------------------------------------------------
 
-$(document).ready(function() {
+$(document).ready(function () {
     let ratings = {
         room: 0,
         service: 0,
         amenities: 0,
         comfort: 0,
-        cleanliness:0,
-        experience:0
+        cleanliness: 0,
+        experience: 0
     };
 
     let ratingsSet = {
@@ -454,13 +486,13 @@ $(document).ready(function() {
         service: false,
         amenities: false,
         comfort: false,
-        cleanliness:false,
-        experience:false
+        cleanliness: false,
+        experience: false
     };
 
     function setStars(ratingElement, ratingValue) {
         const stars = ratingElement.children('.star');
-        stars.each(function() {
+        stars.each(function () {
             const starValue = parseFloat($(this).data('value'));
             if (starValue <= ratingValue) {
                 $(this).removeClass('half').addClass('full');
@@ -561,7 +593,7 @@ $(document).ready(function() {
                 // Create and append the textarea
                 const textarea = $('<textarea/>', {
                     'class': 'form-control my-3 w-100',
-                    'placeholder': 'Please provide additional feedback here...', 'rows':'6', 'cols':'60'
+                    'placeholder': 'Please provide additional feedback here...', 'rows': '6', 'cols': '60'
                 });
                 averageRatingElement.append(textarea);
             }
@@ -571,7 +603,7 @@ $(document).ready(function() {
             $('.selected-star').empty().append(averageRatingElement).addClass('border rounded shadow');
 
             // Handle submit button click
-            submitButton.on('click', function() {
+            submitButton.on('click', function () {
                 // Check if the current page URL matches the specified URL
                 if (window.location.href === 'https://rms.ranqinxz.com/frontend/customer-impressions.html') {
                     // Redirect to post-review-submission.html
@@ -588,13 +620,13 @@ $(document).ready(function() {
         }
     }
 
-    $('.rating').each(function() {
+    $('.rating').each(function () {
         const rating = $(this).data('rating');
         createStars($(this));
         setStars($(this), rating);
     });
 
-    $('.rating').on('mousemove', '.star', function(e) {
+    $('.rating').on('mousemove', '.star', function (e) {
         const ratingElement = $(this).closest('.rating');
         const offset = $(this).offset();
         const relativeX = e.pageX - offset.left;
@@ -608,12 +640,12 @@ $(document).ready(function() {
         setStars(ratingElement, ratingValue);
     });
 
-    $('.rating').on('mouseleave', function() {
+    $('.rating').on('mouseleave', function () {
         const rating = $(this).data('rating');
         setStars($(this), rating);
     });
 
-    $('.rating').on('click', '.star', function(e) {
+    $('.rating').on('click', '.star', function (e) {
         const ratingElement = $(this).closest('.rating');
         const offset = $(this).offset();
         const relativeX = e.pageX - offset.left;
@@ -663,12 +695,12 @@ $(document).ready(function() {
 
 // Customer review screen
 
-$(document).ready(function() {
+$(document).ready(function () {
     let overallRating = 0;
 
     function setStars(ratingElement, ratingValue) {
         const stars = ratingElement.children('.star');
-        stars.each(function() {
+        stars.each(function () {
             const starValue = parseFloat($(this).data('value'));
             if (starValue <= ratingValue) {
                 $(this).removeClass('half').addClass('full');
@@ -697,13 +729,13 @@ $(document).ready(function() {
         $('.rating-score').text(averageRating.toFixed(1));
     }
 
-    $('.rating-stars').each(function() {
+    $('.rating-stars').each(function () {
         const rating = $(this).data('rating');
         createStars($(this));
         setStars($(this), rating);
     });
 
-    $('.rating-stars').on('mousemove', '.star', function(e) {
+    $('.rating-stars').on('mousemove', '.star', function (e) {
         const ratingElement = $(this).closest('.rating-stars');
         const offset = $(this).offset();
         const relativeX = e.pageX - offset.left;
@@ -717,12 +749,12 @@ $(document).ready(function() {
         setStars(ratingElement, ratingValue);
     });
 
-    $('.rating-stars').on('mouseleave', function() {
+    $('.rating-stars').on('mouseleave', function () {
         const rating = $(this).data('rating');
         setStars($(this), rating);
     });
 
-    $('.rating-stars').on('click', '.star', function(e) {
+    $('.rating-stars').on('click', '.star', function (e) {
         const ratingElement = $(this).closest('.rating-stars');
         const offset = $(this).offset();
         const relativeX = e.pageX - offset.left;
@@ -746,7 +778,7 @@ $(document).ready(function() {
     });
 
     // Handle submit button click
-    $('#customereview-btn').on('click', function() {
+    $('#customereview-btn').on('click', function () {
         if (overallRating >= 4) {
             window.location.href = 'experience-share.html';
         } else {

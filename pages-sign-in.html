@@ -11,6 +11,7 @@
 	<title>RMS FUDGE</title>
 
 	<link  href="css/all.css" rel="stylesheet">
+	<link href="../fonts/boxicons.css"  rel="stylesheet" />
 	<link id="theme-style" href="css/light.css" rel="stylesheet">
 	
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -21,13 +22,14 @@
 			document.getElementById('theme-style').setAttribute('href', `css/${savedTheme}.css`);
 		})();
 	</script>
+	<script src="https://kit.fontawesome.com/2af8cee063.js" crossorigin="anonymous"></script>
 </head>
 
 <body data-theme="light">
 	<main class="d-flex w-100">
 		<div class="container-fluid d-flex flex-column" id="login">
 			<div class="row vh-100">
-				<div class="col-12 col-lg-6 col-xl-7">
+				<div class="col-12 col-lg-6 col-xl-7 d-none d-lg-block">
 					<div class="d-flex align-items-center justify-content-center flex-column h-100">
 						<img src="img/images/login-v2.png" class="img-fluid img-login" alt="login" width="500">
 						<div class="mt-5 text-center d-none">
@@ -56,8 +58,9 @@
 											  <span class="error text-danger small d-none" id="signInEmailError">Email is required.</span>
 											  <span class="success text-success small d-none" id="signInEmailSuccess">Valid email!</span>
 										</div>
-										<div class="mb-4">
+										<div class="mb-4 position-relative">
 											<input class="form-control form-control-lg" id="signInPassword" type="password" name="password" placeholder="Password">
+											<i class="fa-solid fa-eye position-absolute end-0 translate-middle-14 me-3" id="togglePassword" style="cursor: pointer;"></i>
 											 <span class="error text-danger small d-none" id="signInPasswordError">Email is required.</span>
 											 <span class="success text-success small d-none" id="signInPasswordSuccess">Valid email!</span>
 											

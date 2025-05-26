@@ -5,18 +5,18 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+
 	<link rel="shortcut icon" href="img/icons/icon-48x48.jpg" />
 
 	<title>RMS FUDGE</title>
 
-	<link  href="css/all.css" rel="stylesheet">
 	<link id="theme-style" href="css/light.css" rel="stylesheet">
-	
+	<link href="css/all.css" rel="stylesheet">
+
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 	<script>
-		(function() {
+		(function () {
 			const savedTheme = localStorage.getItem('theme') || 'light';
 			document.getElementById('theme-style').setAttribute('href', `css/${savedTheme}.css`);
 		})();
@@ -25,56 +25,84 @@
 </head>
 
 <body data-theme="light">
-	<div class="wrapper">
+	<div class="wrapper d-none">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="Dashboard.html">
-          			<span class="align-middle">
+					<span class="align-middle">
 						<img src="img/images/logo-white.png" alt="logo" style="margin: -50px;">
 					</span>
-        		</a>
+				</a>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
 						Pages
-					</li>	
+					</li>
 					<li class="sidebar-item active">
 						<a class="sidebar-link" href="Dashboard.html">
-              				<i class="fa-solid fa-chart-line"></i><span class="align-middle">Dashboard</span>
-            			</a>
+							<i class="fa-solid fa-chart-line"></i><span class="align-middle">Dashboard</span>
+						</a>
 					</li>
 					<li class="sidebar-item">
-						<a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span class="align-middle">Platform Reviews</span>
+						<a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed"
+							aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="feather feather-layout align-middle">
+								<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+								<line x1="3" y1="9" x2="21" y2="9"></line>
+								<line x1="9" y1="21" x2="9" y2="9"></line>
+							</svg> <span class="align-middle">Platform Reviews</span>
 						</a>
 						<ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            
+
 							<li class="sidebar-item"><a class="sidebar-link" href="/Google.html">Google</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="/TripAdvisor.html">Trip Advisor</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/TripAdvisor.html">Trip Advisor</a>
+							</li>
 							<li class="sidebar-item"><a class="sidebar-link" href="/Booking.html">Booking</a></li>
 							<li class="sidebar-item"><a class="sidebar-link" href="/Expedia.html">Expedia</a></li>
 						</ul>
 					</li>
 					<!--  -->
 					<li class="sidebar-item">
-						<a data-bs-target="#qrCode" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span class="align-middle">QR Codes</span>
+						<a data-bs-target="#qrCode" data-bs-toggle="collapse" class="sidebar-link collapsed"
+							aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="feather feather-layout align-middle">
+								<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+								<line x1="3" y1="9" x2="21" y2="9"></line>
+								<line x1="9" y1="21" x2="9" y2="9"></line>
+							</svg> <span class="align-middle">QR Codes</span>
 						</a>
 						<ul id="qrCode" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="/Choose-Design.html">Choose Design</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="/Edit-Design.html">Edit Design</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Choose-Design.html">Choose
+									Design</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Edit-Design.html">Edit Design</a>
+							</li>
 						</ul>
 					</li>
 					<!--  -->
 					<li class="sidebar-item">
-						<a data-bs-target="#settings" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout align-middle"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> <span class="align-middle">Settings</span>
+						<a data-bs-target="#settings" data-bs-toggle="collapse" class="sidebar-link collapsed"
+							aria-expanded="false">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+								fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" class="feather feather-layout align-middle">
+								<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+								<line x1="3" y1="9" x2="21" y2="9"></line>
+								<line x1="9" y1="21" x2="9" y2="9"></line>
+							</svg> <span class="align-middle">Settings</span>
 						</a>
 						<ul id="settings" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-							<li class="sidebar-item"><a class="sidebar-link" href="/Google-Business-Name.html">Google Business Name</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="/Trip-Business-Name.html">TripAdv Business Name</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="/Booking-Business-Name.html">Booking Business Name</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="/Expedia-Business-Name.html">Expedia Business Name</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Google-Business-Name.html">Google
+									Business Name</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Trip-Business-Name.html">TripAdv
+									Business Name</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Booking-Business-Name.html">Booking
+									Business Name</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/Expedia-Business-Name.html">Expedia
+									Business Name</a></li>
 						</ul>
 					</li>
 					<!--  -->
@@ -85,7 +113,8 @@
 					</li>
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="pages-sign-up.html">
-							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign Up</span>
+							<i class="align-middle" data-feather="user-plus"></i> <span class="align-middle">Sign
+								Up</span>
 						</a>
 					</li>
 				</ul>
@@ -95,8 +124,8 @@
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          			<i class="hamburger align-self-center"></i>
-        		</a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
@@ -117,7 +146,8 @@
 									<span class="indicator">4</span>
 								</div>
 							</a>
-							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="alertsDropdown">
 								<div class="dropdown-menu-header">
 									4 New Notifications
 								</div>
@@ -129,7 +159,8 @@
 											</div>
 											<div class="col-10">
 												<div class="text-dark">Lorem ipsum</div>
-												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
+												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
+													hendrerit et.</div>
 												<div class="text-muted small mt-1">2h ago</div>
 											</div>
 										</div>
@@ -152,7 +183,8 @@
 											</div>
 											<div class="col-10">
 												<div class="text-dark">New connection</div>
-												<div class="text-muted small mt-1">Christina accepted your request.</div>
+												<div class="text-muted small mt-1">Christina accepted your request.
+												</div>
 												<div class="text-muted small mt-1">14h ago</div>
 											</div>
 										</div>
@@ -164,12 +196,14 @@
 							</div>
 						</li>
 						<li class="nav-item dropdown d-none">
-							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown"
+								data-bs-toggle="dropdown">
 								<div class="position-relative">
 									<i class="align-middle" data-feather="message-square"></i>
 								</div>
 							</a>
-							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="messagesDropdown">
 								<div class="dropdown-menu-header">
 									<div class="position-relative">
 										4 New Messages
@@ -179,11 +213,13 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+												<img src="img/avatars/avatar-5.jpg"
+													class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Vanessa Tucker</div>
-												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
+													tortor.</div>
 												<div class="text-muted small mt-1">15m ago</div>
 											</div>
 										</div>
@@ -191,11 +227,13 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
+												<img src="img/avatars/avatar-2.jpg"
+													class="avatar img-fluid rounded-circle" alt="William Harris">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">William Harris</div>
-												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod
+													vitae.</div>
 												<div class="text-muted small mt-1">2h ago</div>
 											</div>
 										</div>
@@ -203,11 +241,13 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+												<img src="img/avatars/avatar-4.jpg"
+													class="avatar img-fluid rounded-circle" alt="Christina Mason">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Christina Mason</div>
-												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.
+												</div>
 												<div class="text-muted small mt-1">4h ago</div>
 											</div>
 										</div>
@@ -215,11 +255,13 @@
 									<a href="#" class="list-group-item">
 										<div class="row g-0 align-items-center">
 											<div class="col-2">
-												<img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+												<img src="img/avatars/avatar-3.jpg"
+													class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
 											</div>
 											<div class="col-10 ps-2">
 												<div class="text-dark">Sharon Lessman</div>
-												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
+													posuere ac, mattis non.</div>
 												<div class="text-muted small mt-1">5h ago</div>
 											</div>
 										</div>
@@ -231,19 +273,26 @@
 							</div>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
 								<i class="align-middle" data-feather="settings"></i>
 							</a>
 
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1 rounded-circle" alt="lorem ipsum" /> <span class="text-dark">Charles Hall</span>
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1 rounded-circle"
+									alt="lorem ipsum" /> <span class="text-dark">Charles Hall</span>
 							</a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="pie-chart"></i> Analytics</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1" data-feather="help-circle"></i> Update Password</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1"
+										data-feather="help-circle"></i> Update Password</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="javascript:void(0)">Log out</a>
 							</div>
@@ -253,11 +302,32 @@
 			</nav>
 
 			<main class="content text-center d-flex align-items-center justify-content-center">
-					<h5 class="display-3 bold"><span class="text-reviews">COMMING SOON</span></h5>
+				<h5 class="display-3 bold"><span class="text-reviews">COMMING SOON</span></h5>
 			</main>
 		</div>
 	</div>
-
+	<!-- loader -->
+	<div class="custom-loader">
+		<div class="box">
+			<div class="logo">
+				<img src="img/images/logo-white.png" width="40" height="40" alt="logo">
+				<path
+					d="M38.0481 4.82927C38.0481 2.16214 40.018 0 42.4481 0H51.2391C53.6692 0 55.6391 2.16214 55.6391 4.82927V40.1401C55.6391 48.8912 53.2343 55.6657 48.4248 60.4636C43.6153 65.2277 36.7304 67.6098 27.7701 67.6098C18.8099 67.6098 11.925 65.2953 7.11548 60.6663C2.37183 56.0036 3.8147e-06 49.2967 3.8147e-06 40.5456V4.82927C3.8147e-06 2.16213 1.96995 0 4.4 0H13.2405C15.6705 0 17.6405 2.16214 17.6405 4.82927V39.1265C17.6405 43.7892 18.4805 47.2018 20.1605 49.3642C21.8735 51.5267 24.4759 52.6079 27.9678 52.6079C31.4596 52.6079 34.0127 51.5436 35.6268 49.4149C37.241 47.2863 38.0481 43.8399 38.0481 39.0758V4.82927Z">
+				</path>
+				<path
+					d="M86.9 61.8682C86.9 64.5353 84.9301 66.6975 82.5 66.6975H73.6595C71.2295 66.6975 69.2595 64.5353 69.2595 61.8682V4.82927C69.2595 2.16214 71.2295 0 73.6595 0H82.5C84.9301 0 86.9 2.16214 86.9 4.82927V61.8682Z">
+				</path>
+				<path
+					d="M2.86102e-06 83.2195C2.86102e-06 80.5524 1.96995 78.3902 4.4 78.3902H83.6C86.0301 78.3902 88 80.5524 88 83.2195V89.1707C88 91.8379 86.0301 94 83.6 94H4.4C1.96995 94 0 91.8379 0 89.1707L2.86102e-06 83.2195Z">
+				</path>
+				</svg>
+			</div>
+		</div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
 	<!-- script -->
 	<script src="js/app.js"></script>
 	<script src="js/jquery.js"></script>
@@ -265,6 +335,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script type="text/javascript" src="js/moment.min.js"></script>
 	<script type="text/javascript" src="js/daterangepicker.min.js"></script>
+	<script>
+		$(window).on('load', function () {
+			setTimeout(function () {
+				$(".custom-loader").fadeOut("slow", function () {
+					$(".wrapper").removeClass("d-none");
+				});
+			}, 3000);
+		});
+	</script>
 </body>
 
 </html>

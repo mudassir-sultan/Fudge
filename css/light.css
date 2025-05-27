@@ -31546,16 +31546,6 @@ svg {
     }
 }
 
-@keyframes ripple {
-    0% {
-        transform: scale(0) translateY(-45%) translateX(13%)
-    }
-
-    to {
-        transform: scale(1) translateY(-45%) translateX(13%)
-    }
-}
-
 .notyf {
     align-items: flex-end;
     box-sizing: border-box;

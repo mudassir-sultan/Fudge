@@ -454,19 +454,41 @@ $(document).ready(function () {
         icon.toggleClass('fa-eye-slash');
     });
     // Add for Tooltip
-    const $trigger = $('.custom-tooltip-trigger');
-    const $wrapper = $trigger.closest('.tooltip-wrapper');
+$('.custom-tooltip-trigger').on('click', function (e) {
+    e.stopPropagation();
 
-    $trigger.on('click', function (e) {
-        e.stopPropagation();
-        $wrapper.toggleClass('active');
-    });
+    const $wrapper = $(this).closest('.tooltip-wrapper');
+    const $tooltip = $wrapper.find('.custom-tooltip-box');
 
-    $(document).on('click', function (e) {
-        if (!$(e.target).closest('.tooltip-wrapper').length) {
-            $wrapper.removeClass('active');
-        }
-    });
+    // Close any other open tooltips
+    $('.tooltip-wrapper').not($wrapper).removeClass('active');
+    $('.custom-tooltip-box').not($tooltip).css('left', '50%');
+
+    // Toggle this one
+    $wrapper.toggleClass('active');
+
+    // Adjust tooltip if it overflows screen
+    setTimeout(() => {
+      const tooltipRect = $tooltip[0].getBoundingClientRect();
+      const screenWidth = $(window).width();
+
+      if (tooltipRect.right > screenWidth) {
+        const overflowRight = tooltipRect.right - screenWidth + 10;
+        $tooltip.css('left', `calc(50% - ${overflowRight}px)`);
+      } else if (tooltipRect.left < 0) {
+        const overflowLeft = Math.abs(tooltipRect.left) + 10;
+        $tooltip.css('left', `calc(50% + ${overflowLeft}px)`);
+      } else {
+        $tooltip.css('left', '50%'); // Reset to center if no overflow
+      }
+    }, 10); // wait a bit for DOM update
+  });
+
+  // Hide tooltip when clicking anywhere else
+  $(document).on('click', function () {
+    $('.tooltip-wrapper').removeClass('active');
+    $('.custom-tooltip-box').css('left', '50%'); // Reset left
+  });
 });
 
 // ------------------------------------------------------------------
